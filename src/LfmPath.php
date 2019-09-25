@@ -276,6 +276,7 @@ class LfmPath
     {
         $new_file_name = $this->helper
             ->translateFromUtf8(trim(pathinfo('.' . $file->getClientOriginalName(), PATHINFO_FILENAME)));
+        $new_file-name = \Illuminate\Support\Str::slug($new_file_name, '_');
 
         if (config('lfm.rename_file') === true) {
             $new_file_name = uniqid();
